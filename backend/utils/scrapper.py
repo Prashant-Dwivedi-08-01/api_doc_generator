@@ -26,7 +26,7 @@ def create_updated_html(name):
         collection_intro.h3.clear()
 
         #image
-        img_tag = soup.new_tag("img", style="width:60px",src="./downloads/rest.png")
+        img_tag = soup.new_tag("img", style="width:60px",src="./rest.png")
         collection_intro.h3.insert(0,img_tag)
 
         #heading
@@ -38,5 +38,5 @@ def create_updated_html(name):
         footer.decompose()
 
         #save the file
-        f = open("api_doc.html","wb")
+        f = open(f"./downloads/{name}.html","wb")
         f.write(soup.prettify("utf-8"))

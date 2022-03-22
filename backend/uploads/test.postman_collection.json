@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "4190cf99-a72c-4702-a97c-92ffe8f7d243",
+		"name": "Memories Application",
+		"description": "This is the application where users can create a memory, also known to be posts, of there recent travel destinations and can also see other's memories.\n\nThis is the REST API resource for the same. This resource is for version 1.0.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Access Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "prashant@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Prashant@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://my-memos-app.herokuapp.com/user/signin",
+					"protocol": "https",
+					"host": [
+						"my-memos-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"signin"
+					]
+				},
+				"description": "This API is used to get access token"
+			},
+			"response": [
+				{
+					"name": "Get Access Token Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "prashant@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Prashant@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://my-memos-app.herokuapp.com/user/signin",
+							"protocol": "https",
+							"host": [
+								"my-memos-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "606"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"25e-Ui4YJyAsL57ovXN5L03VQsbnOmI\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 25 Jan 2022 14:57:37 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": {\n        \"bucketList\": [\n            \"61d9b934c05ca2002304a08b\",\n            \"61a1f5a416a65f002368ad18\",\n            \"61a1f5a416a65f002368ad18\",\n            \"6100ed2a86a1c90022e39ff8\",\n            \"6100ec4d86a1c90022e39ff5\",\n            \"61a1f5a416a65f002368ad18\",\n            \"61a1f5a416a65f002368ad18\"\n        ],\n        \"_id\": \"6100e1c5fdf064363075d79a\",\n        \"name\": \"Prashant Dwivedi\",\n        \"email\": \"prashant@gmail.com\",\n        \"password\": \"$2a$12$SFBSC/OSxVKuZ5c6AskWEuOBK8iTP5RfHotGNHommAmxxBCPLlJx2\",\n        \"__v\": 0\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByYXNoYW50QGdtYWlsLmNvbSIsImlkIjoiNjEwMGUxYzVmZGYwNjQzNjMwNzVkNzlhIiwiaWF0IjoxNjQzMTIyNjU3LCJleHAiOjE2NDMxMjYyNTd9.YYVVy3QmW6Ml5XcvYzHf-vrEqOqjjNNQXdgV3qSGERc\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"comment\":\"Prashant Dwivedi: This is the place of friendship yuss\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://my-memos-app.herokuapp.com/posts/61abb3f08a2f3e00234f6a2d/comment",
+					"protocol": "https",
+					"host": [
+						"my-memos-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"61abb3f08a2f3e00234f6a2d",
+						"comment"
+					]
+				},
+				"description": "This API resource is use to comment on any Post using the Post ID"
+			},
+			"response": [
+				{
+					"name": "Comment Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\":\"Prashant Dwivedi: This is the place of friendship yuss\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://my-memos-app.herokuapp.com/posts/61abb3f08a2f3e00234f6a2d/comment",
+							"protocol": "https",
+							"host": [
+								"my-memos-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"posts",
+								"61abb3f08a2f3e00234f6a2d",
+								"comment"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "397"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"18d-4V1BM8Cyk/9fTI6t9UDmujjmtPM\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 25 Jan 2022 14:59:00 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tags\": [\n        \"Test\",\n        \"1\",\n        \"23\"\n    ],\n    \"likes\": [\n        \"0\",\n        \"6100e1c5fdf064363075d79a\"\n    ],\n    \"comments\": [\n        \"Prashant Dwivedi: This is the place of friendship yuss\",\n        \"Prashant Dwivedi: This is the place of friendship yuss\"\n    ],\n    \"createdAt\": \"2021-12-04T18:31:12.901Z\",\n    \"_id\": \"61abb3f08a2f3e00234f6a2d\",\n    \"title\": \"Test\",\n    \"message\": \"Test123\",\n    \"selectedFile\": \"test123\",\n    \"name\": \"Prashant Dwivedi\",\n    \"creator\": \"6100e1c5fdf064363075d79a\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Add to Bucketlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByYXNoYW50QGdtYWlsLmNvbSIsImlkIjoiNjEwMGUxYzVmZGYwNjQzNjMwNzVkNzlhIiwiaWF0IjoxNjQ3OTU1NDMzLCJleHAiOjE2NDc5NTkwMzN9.nacKJMhVVbk5CvSmmNCCbFwIa9icy5ccGkbXkgZNKrw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://my-memos-app.herokuapp.com/user/61a3276feec12f00237e65a0/add-to-bucketlist",
+					"protocol": "https",
+					"host": [
+						"my-memos-app",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"61a3276feec12f00237e65a0",
+						"add-to-bucketlist"
+					]
+				},
+				"description": "This API resource is used to add any destination to the bucket list."
+			},
+			"response": [
+				{
+					"name": "Add to Bucketlist Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://my-memos-app.herokuapp.com/user/61a3276feec12f00237e65a0/add-to-bucketlist",
+							"protocol": "https",
+							"host": [
+								"my-memos-app",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"user",
+								"61a3276feec12f00237e65a0",
+								"add-to-bucketlist"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "402"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"192-l83hXKYHNxKEtokMeLynYLKdRH8\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Mar 2022 13:24:18 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"bucketList\": [\n        \"61d9b934c05ca2002304a08b\",\n        \"61a1f5a416a65f002368ad18\",\n        \"61a1f5a416a65f002368ad18\",\n        \"6100ed2a86a1c90022e39ff8\",\n        \"6100ec4d86a1c90022e39ff5\",\n        \"61a1f5a416a65f002368ad18\",\n        \"61a1f5a416a65f002368ad18\",\n        \"61a3276feec12f00237e65a0\"\n    ],\n    \"_id\": \"6100e1c5fdf064363075d79a\",\n    \"name\": \"Prashant Dwivedi\",\n    \"email\": \"prashant@gmail.com\",\n    \"password\": \"$2a$12$SFBSC/OSxVKuZ5c6AskWEuOBK8iTP5RfHotGNHommAmxxBCPLlJx2\",\n    \"__v\": 0\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByYXNoYW50QGdtYWlsLmNvbSIsImlkIjoiNjEwMGUxYzVmZGYwNjQzNjMwNzVkNzlhIiwiaWF0IjoxNjQzMTIyNjU3LCJleHAiOjE2NDMxMjYyNTd9.YYVVy3QmW6Ml5XcvYzHf-vrEqOqjjNNQXdgV3qSGERc",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
