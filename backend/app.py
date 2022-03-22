@@ -1,15 +1,18 @@
 import os
-from flask import Flask, flash, request, redirect, url_for
+from flask import Flask, flash, request, redirect, url_for, send_file
 from werkzeug.utils import secure_filename
 from utils.common import response
 from utils.scrapper import create_updated_html
 import subprocess
 
 UPLOAD_FOLDER = './uploads'
+DOWNLOAD_FOLDER = './downloads'
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
+app.add_url_rule(
+    "/uploads", endpoint="download_file", build_only=True
+)
 
 def create_html_doc(name):
     err = None
@@ -32,6 +35,7 @@ def create_html_doc(name):
     except Exception as ex:
         print(f"Exception: {ex}. Error: {err}") 
         raise
+
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -56,7 +60,12 @@ def upload_file():
                 "msg": "File Uploaded Successfully"
             }
             create_html_doc(filename)
-            return response(data=res)
+            # return response(data=res)
+
+            result = filename.split(".")[0] + ".html"
+            # print(result)
+            # uploads = os.path.join(current_app.root_path, app.config['UPLOAD_FOLDER'])
+            return send_file(f"./downloads/{result}", as_attachment=True)
 
     except Exception as ex:
         print(f"Exception: {ex}. Error: {err}") 
@@ -64,6 +73,11 @@ def upload_file():
             "msg":err
         }
         return response(data=res, status=400)
+    finally:
+
+        os.remove(f'./downloads/{result}')
+        os.remove(f'./uploads/{filename}')
+        print("Deleted both files successfully")
 
 if __name__ == "__main__":
     app.run(debug=True)
