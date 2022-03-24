@@ -12,18 +12,25 @@ const Home = () => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        alert(`Selected File: ${uploadedFile.current.files[0].name}`)
-
-        // const formData = JSON.stringify({ "collection": uploadedFile.current.files[0] });
         const formData = new FormData()
         formData.append('collection', uploadedFile.current.files[0])
-        await dispatch(uploadFile(formData));
+
+        const requestOptions = {
+            method: 'POST',
+            body: formData
+        };
+        
+        fetch('http://localhost:5000/upload', requestOptions)
+            .then(response => {
+                response.blob().then(blob => {
+                    let url = window.URL.createObjectURL(blob);
+                    let a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'doc.html';
+                    a.click();
+                });
+        });
     } 
-    useEffect(() => {
-        console.log(html_doc)
-    }, [html_doc])
-
-
 
 
     return (

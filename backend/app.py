@@ -11,11 +11,12 @@ UPLOAD_FOLDER = './uploads'
 DOWNLOAD_FOLDER = './downloads'
 
 app = Flask(__name__)
+CORS(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.add_url_rule(
     "/uploads", endpoint="download_file", build_only=True
 )
-CORS(app)
+
 
 def create_html_doc(name):
     err = None
@@ -39,6 +40,10 @@ def create_html_doc(name):
         print(f"Exception: {ex}. Error: {err}") 
         raise
 
+@app.route('/downlaod')
+def download_file():
+    path = "./requirements.txt"
+    return send_file(path, as_attachment=True)
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -90,6 +95,7 @@ def upload_file():
                 os.remove(f'./uploads/{filename}')
 
         print("Deleted both files successfully")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

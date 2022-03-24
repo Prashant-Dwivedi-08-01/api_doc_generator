@@ -2,11 +2,11 @@ import * as api from "../api/index";
 
 export const uploadFile = (formData) => async (dispatch) => {
     try{
-        const data = await api.uploadFile(formData);
-        console.log(data["data"])
+        const response = await api.uploadFile(formData);
+
         const action = {
             type : "UPLOAD_FILE",
-            payload: data["data"]
+            payload: response
         }
         dispatch(action);
     } catch(error){
