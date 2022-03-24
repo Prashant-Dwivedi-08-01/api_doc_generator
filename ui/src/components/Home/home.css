@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .v684_4074 {
+    width: 100%;
+    height: 100vh;
+    background: rgba(65,79,85,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v712_4145 {
+    width: 437px;
+    color: linear-gradient(rgba(255,255,255,1), rgba(192,207,240,0.910865843296051));
+    position: absolute;
+    top: 28px;
+    left: 48px;
+    font-family: Abel;
+    font-weight: Regular;
+    font-size: 68px;
+    opacity: 1;
+    text-align: center;
+    font-size: 60px;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .v802_4026 {
+    width: 266px;
+    color: linear-gradient(rgba(255,255,255,1), rgba(192,207,240,0.910865843296051));
+    position: absolute;
+    top: 28px;
+    left: 668px;
+    font-family: Abel;
+    font-weight: Regular;
+    font-size: 62px;
+    opacity: 1;
+    text-align: center;
+    font-size: 60px;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .v712_4146 {
+    width: 434px;
+    color: linear-gradient(rgba(255,255,255,1), rgba(192,207,240,0.910865843296051));
+    position: absolute;
+    top: 28px;
+    left: 1118px;
+    font-family: Abel;
+    font-weight: Regular;
+    font-size: 62px;
+    opacity: 1;
+    text-align: center;
+    font-size: 60px;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .v712_4147 {
+    width: 716px;
+    height: 639px;
+    /* background: url("./images/v712_4147.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: -17px;
+    left: 471px;
+    overflow: hidden;
+  }
+  .v714_4082 {
+    width: 220px;
+    height: 220px;
+    background: url("./images/v714_4082.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 3px;
+    left: 13px;
+    overflow: hidden;
+  }
+  .v714_4080 {
+    width: 234px;
+    height: 234px;
+    background: url("./images/v714_4080.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 482px;
+    overflow: hidden;
+  }
+  .v712_4150 {
+    width: 683px;
+    height: 458px;
+    /* background: url("./images/v712_4150.png"); */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 181px;
+    left: 15px;
+    overflow: hidden;
+  }
+  .v712_4151 {
+    width: 683px;
+    height: 458px;
+    background: url("./images/v712_4151.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v712_4152 {
+    width: 593px;
+    height: 424px;
+    background: url("./images/v712_4152.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 17px;
+    left: 46px;
+    border-top-left-radius: 33px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 0px;
+    overflow: hidden;
+  }
+  .v802_4027 {
+    width: 232px;
+    height: 69px;
+    background: rgba(196,196,196,1);
+    opacity: 1;
+    position: absolute;
+    top: 680px;
+    left: 712px;
+    border-top-left-radius: 47px;
+    border-top-right-radius: 47px;
+    border-bottom-left-radius: 47px;
+    border-bottom-right-radius: 47px;
+    overflow: hidden;
+  }
+  .v802_4028 {
+    width: 337px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 682px;
+    left: 663px;
+    font-family: Abel;
+    font-weight: Regular;
+    font-size: 48px;
+    opacity: 1;
+    text-align: center;
+  }
+  .v802_4029 {
+    width: 497px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 632px;
+    left: 461px;
+    font-family: Abel;
+    font-size: 34px;
+    opacity: 1;
+    text-align: center;
+  }
+  .file-input{
+    position: absolute;
+    top: 645px;
+    font-size: 18px;
+    left: 979px;
+    border-radius: 8px;
+  }
