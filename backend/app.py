@@ -4,6 +4,8 @@ from werkzeug.utils import secure_filename
 from utils.common import response
 from utils.scrapper import create_updated_html
 import subprocess
+from flask_cors import CORS
+from flask import request
 
 UPLOAD_FOLDER = './uploads'
 DOWNLOAD_FOLDER = './downloads'
@@ -13,6 +15,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.add_url_rule(
     "/uploads", endpoint="download_file", build_only=True
 )
+CORS(app)
 
 def create_html_doc(name):
     err = None
@@ -40,12 +43,16 @@ def create_html_doc(name):
 @app.route('/upload', methods=['POST'])
 def upload_file():
     err = None
+    result = ""
+    filename = ""
     try:
         # check if the post request has the file part
-        file = request.files["collection"]
-        if not file:
+        if 'collection' not in request.files:
             err = "Collection File is required"
             raise
+
+        file = request.files["collection"]
+            
         # If the user does not select a file, the browser submits an
         # empty file without a filename.
         if file.filename == '':
@@ -74,9 +81,14 @@ def upload_file():
         }
         return response(data=res, status=400)
     finally:
+        for root, dirs, files in os.walk('./downloads'):
+            if result in files:
+                os.remove(f'./downloads/{result}')
 
-        os.remove(f'./downloads/{result}')
-        os.remove(f'./uploads/{filename}')
+        for root, dirs, files in os.walk('./uploads'):
+            if filename in files:
+                os.remove(f'./uploads/{filename}')
+
         print("Deleted both files successfully")
 
 if __name__ == "__main__":
